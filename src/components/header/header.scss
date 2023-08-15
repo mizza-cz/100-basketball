@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     max-width: 80rem;
-    margin-top: -26px;
+
     margin-bottom: 36px;
     .btn {
       text-transform: uppercase;
@@ -20,7 +20,7 @@
       margin-bottom: 36px;
       @include media-breakpoint-down(xl) {
         font-size: 60px;
-        padding: 0 40px;
+        padding: 0 20px;
       }
     }
     &-logo {
@@ -40,7 +40,11 @@
   &__img {
     width: 100%;
     max-width: 2060px;
-    margin: -68px auto 0;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    @include media-breakpoint-down(xl) {
+      padding: 0;
+    }
     img {
       width: 100%;
       height: 100%;
