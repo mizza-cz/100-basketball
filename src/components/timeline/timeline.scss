@@ -22,7 +22,6 @@
     position: relative;
     padding-left: 55px;
     @media (max-width: 941px) {
-      align-items: center;
       display: flex;
       margin-bottom: 0;
       flex-wrap: wrap;
@@ -41,6 +40,7 @@
       overflow: hidden;
       position: relative;
       padding-right: 20px;
+      padding-top: 1.125rem;
       @media (min-width: 940px) {
         padding-left: 0;
       }
@@ -96,6 +96,7 @@ ul.timeline {
 ////// timeline
 .timeline {
   padding-top: 38px;
+  padding-bottom: 38px;
   &__subtitle {
     color: rgba(26, 25, 25, 1);
     font-family: "Oswald", sans-serif;
@@ -138,13 +139,15 @@ ul.timeline {
     svg {
       margin-top: 18px;
       display: block;
-      margin-left: 10px;
-      @media (min-width: 940px) {
-        padding-left: 0;
+      margin-left: 0px;
+      @media (max-width: 941px) {
+        margin-left: 8px;
       }
     }
     &.first {
-      padding-bottom: 0;
+      @media (min-width: 941px) {
+        padding-bottom: 0;
+      }
     }
   }
 }
