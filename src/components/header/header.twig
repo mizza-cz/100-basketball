@@ -121,15 +121,3 @@
     <a href="#" class="btn btn-secondary">Sdílet s přáteli</a>
   </div>
 </header>
-<script>
-  window.addEventListener("scroll", function () {
-    var header = document.querySelector(".header-scroll"); // Замените ".header" на селектор вашего заголовка
-    var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-
-    if (scrollPosition >= 200) {
-      header.classList.add("active"); // Замените "scrolled" на имя класса, который вы хотите добавить
-    } else {
-      header.classList.remove("active");
-    }
-  });
-</script>

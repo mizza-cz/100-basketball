@@ -15,12 +15,10 @@ $(document).ready(function () {
         }
       );
 
-    // Remove active class from all links and add it to the clicked link
     $("a[href*=\\#]").removeClass("active");
     $(this).addClass("active");
   });
 
-  // Add active class to nav links based on scroll position
   $(window).on("scroll", function () {
     var scrollPosition = $(this).scrollTop();
     $("a[href*=\\#]").each(function () {
