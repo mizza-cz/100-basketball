@@ -53,6 +53,7 @@ body {
   line-height: 1.5;
   background-color: #f7f7f7;
   position: relative;
+  font-family: "Oswald", sans-serif;
   &::before {
     content: "";
     position: absolute;
@@ -70,7 +71,9 @@ body {
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
-
+a {
+  color: inherit;
+}
 /* Make images easier to work with */
 img,
 picture {
