@@ -1,0 +1,65 @@
+.header {
+  &__content {
+    margin: 0 auto;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    max-width: 80rem;
+    margin-top: -26px;
+    margin-bottom: 36px;
+    .btn {
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+    h1 {
+      font-family: "Druk";
+      font-size: 100px;
+      text-transform: uppercase;
+      line-height: 100%;
+      margin-bottom: 36px;
+      @include media-breakpoint-down(xl) {
+        font-size: 60px;
+        padding: 0 40px;
+      }
+    }
+    &-logo {
+      width: 214px;
+      display: block;
+      margin-bottom: 80px;
+      @include media-breakpoint-down(lg) {
+        width: 180px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+  }
+  &__img {
+    width: 100%;
+    max-width: 2060px;
+    margin: -68px auto 0;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.header-scroll {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  display: none;
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}

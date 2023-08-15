@@ -1,0 +1,23 @@
+/*! purgecss start ignore */
+.text-primary {
+  color: var(--color-primary);
+}
+.text-blue {
+  color: var(--color-blue);
+}
+.btn {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  color: var(--color-light);
+  padding: 15px 24px 17px;
+}
+.btn-primary {
+  background-color: var(--color-primary);
+}
+.btn-secondary {
+  background-color: var(--color-blue);
+}
+/*! purgecss end ignore */

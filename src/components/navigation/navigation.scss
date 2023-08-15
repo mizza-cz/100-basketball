@@ -1,0 +1,38 @@
+.nav {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  z-index: 9999;
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  a {
+    color: #bbbaba;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-right: 44px;
+    position: relative;
+  }
+  .active {
+    right: 20px;
+    color: var(--color-primary);
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 25px;
+      height: 2px;
+      background-color: var(--color-primary);
+    }
+  }
+}
