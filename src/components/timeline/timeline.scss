@@ -131,7 +131,7 @@ ul.timeline {
     z-index: 99;
     display: flex;
     flex-direction: column;
-
+    height: 100px;
     @media (min-width: 940px) {
       justify-content: center;
       text-align: center;

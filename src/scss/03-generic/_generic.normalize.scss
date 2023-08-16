@@ -4,16 +4,17 @@
 *::before {
   box-sizing: inherit;
 }
+
 html,
 body {
-  position: relative;
   overflow-x: hidden;
-  height: 100%;
+  position: relative;
 }
 
 * {
   transition: all 0.1s ease;
 }
+
 /* Remove default margin */
 body,
 h1,
@@ -43,12 +44,12 @@ html {
 
 /* Set core root defaults */
 html:focus-within {
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 }
-
+html {
+}
 /* Set core body defaults */
 body {
-  min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background-color: #f7f7f7;
