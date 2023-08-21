@@ -1,37 +1,66 @@
-$(document).ready(function () {
-  $("a[href*=\\#]").on("click", function (e) {
-    e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+  var links = document.querySelectorAll("a[href^='#']");
 
-    var target = $(this).attr("href");
-    $("html, body")
-      .stop()
-      .animate(
-        {
-          scrollTop: $(target).offset().top,
-        },
-        600,
-        function () {
-          location.hash = target;
-        }
-      );
+  links.forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
 
-    $("a[href*=\\#]").removeClass("active");
-    $(this).addClass("active");
+      var targetId = link.getAttribute("href");
+      var target = document.querySelector(targetId);
+      if (!target) return;
+
+      smoothScrollTo(target.offsetTop, 100);
+
+      links.forEach(function (link) {
+        link.classList.remove("active");
+      });
+      link.classList.add("active");
+    });
   });
 
-  $(window).on("scroll", function () {
-    var scrollPosition = $(this).scrollTop();
-    $("a[href*=\\#]").each(function () {
-      var target = $(this).attr("href");
-      var targetPosition = $(target).offset().top;
+  function smoothScrollTo(to, duration) {
+    var start = window.scrollY || window.pageYOffset;
+    var change = to - start;
+    var currentTime = 0;
+    var increment = 20;
+
+    function animateScroll() {
+      currentTime += increment;
+      var val = Math.easeInOutQuad(currentTime, start, change, duration);
+      window.scrollTo(0, val);
+      if (currentTime < duration) {
+        requestAnimationFrame(animateScroll);
+      }
+    }
+
+    Math.easeInOutQuad = function (t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    };
+
+    animateScroll();
+  }
+
+  window.addEventListener("scroll", function () {
+    var scrollPosition = window.scrollY || window.pageYOffset;
+    links.forEach(function (link) {
+      var targetId = link.getAttribute("href");
+      var target = document.querySelector(targetId);
+      if (!target) return;
+
+      var targetPosition = target.offsetTop;
       if (
         targetPosition <= scrollPosition &&
-        targetPosition + $(target).outerHeight() > scrollPosition
+        targetPosition + target.offsetHeight > scrollPosition
       ) {
-        $("a[href*=\\#]").removeClass("active");
-        $(this).addClass("active");
+        links.forEach(function (link) {
+          link.classList.remove("active");
+        });
+        link.classList.add("active");
       } else {
-        $(this).removeClass("active");
+        link.classList.remove("active");
       }
     });
   });
